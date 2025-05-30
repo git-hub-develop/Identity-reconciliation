@@ -25,8 +25,8 @@ A robust service for identifying and linking user contact data by resolving mult
 ---
 
 ## 📄 API Docs
-
-> 🌐 Swagger UI: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+> 🌐 Swagger UI (Production): [https://identity-reconciliation-gzp4.onrender.com/api-docs/](https://identity-reconciliation-gzp4.onrender.com/api-docs/)
+> 🌐 Swagger UI (Local): [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
 
 ---
 
