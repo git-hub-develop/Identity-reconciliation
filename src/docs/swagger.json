@@ -1,16 +1,76 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Contact Identification API",
-    "version": "1.0.0"
+    "title": "Contact Identity API",
+    "version": "1.0.0",
+    "description": "API to resolve and consolidate user contact identities"
   },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
   "paths": {
-    "/ping": {
-      "get": {
-        "summary": "Ping route",
+    "/api/identify": {
+      "post": {
+        "summary": "Identify or consolidate a contact",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "john@example.com"
+                  },
+                  "phoneNumber": {
+                    "type": "string",
+                    "example": "1234567890"
+                  }
+                },
+                "required": []
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "pong"
+            "description": "Successfully identified contact",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "contact": {
+                      "type": "object",
+                      "properties": {
+                        "primaryContatctId": { "type": "number" },
+                        "emails": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        },
+                        "phoneNumbers": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        },
+                        "secondaryContactIds": {
+                          "type": "array",
+                          "items": { "type": "number" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body"
+          },
+          "500": {
+            "description": "Internal server error"
           }
         }
       }
