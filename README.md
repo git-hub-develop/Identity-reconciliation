@@ -34,8 +34,8 @@ A robust service for identifying and linking user contact data by resolving mult
 
 ```bash
 # 1. Clone repo
-git clone https://github.com/git-hub-develop/Identity-reconciliation.git
-cd Identity-reconciliation
+git clone https://github.com/your-username/contact-identity-api.git
+cd contact-identity-api
 
 # 2. Install dependencies
 npm install
@@ -49,3 +49,22 @@ npx prisma migrate dev
 
 # 5. Start dev server
 npm run dev
+````
+
+---
+
+## 🧪 Run Tests
+
+```bash
+npm test
+```
+
+---
+
+## ✨ Author
+
+**Miran Firdausi**
+Building serious backend logic with clean code.
+
+---
+
